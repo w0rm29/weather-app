@@ -1,0 +1,103 @@
+// Configuration
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Layout & components
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/spinners";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+// Icons
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+$placeholder-color: #aeb2b6;
+$border-color: #495057;
+$gray-300: #dee2e6;
+$bg-day: #204c8c;
+$bg-night: #1e355a;
+$card-color-day: #315b96;
+$card-color-night: #314769;
+$hero-image-day: "../img/day.webp";
+$hero-image-night: "../img/night.webp";
+
+@mixin search-box($border-color, $color) {
+    border-color: $border-color;
+    color: $color;
+
+    i {
+        color: inherit;
+    }
+}
+
+@mixin theme-colors($bg-color, $card-color, $hero-image) {
+    background-color: $bg-color;
+
+    .card {
+        background-color: $card-color;
+    }
+
+    .hero.card {
+        background: url($hero-image) no-repeat center center;
+    }
+}
+
+.day-theme {
+    @include theme-colors($bg-day, $card-color-day, $hero-image-day);
+}
+
+.night-theme {
+    @include theme-colors($bg-night, $card-color-night, $hero-image-night);
+}
+
+.btn.search-btn {
+    width: 100%;
+    @include search-box($border-color, $placeholder-color);
+
+    &:hover {
+        @include search-box($gray-300, $gray-300);
+    }
+}
+
+.weather-form {
+    padding: 0 12px;
+}
+
+.search-label {
+    padding: 6px 0;
+}
+
+.search-input:focus {
+    box-shadow: none;
+}
+
+@media (min-width: 992px) {
+    .search-btn-container {
+        width: 251px;
+    }
+}
+
+@media (min-width: 350px) {
+    .row-cols-xs-2>* {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
