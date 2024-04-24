@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Wizard</title>
+<script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+
+<body class="h-100 d-flex flex-column">
+    <nav class="navbar bg-black">
+        <div class="container-fluid">
+            <span class="navbar-brand">Weather Wizard</span>
+            <div class="search-btn-container">
+                <button class="btn btn-dark search-btn text-start" data-bs-toggle="modal"
+                    data-bs-target="#search-modal">
+                    <i class="bi bi-search me-0 me-lg-2"></i>
+                    <span class="d-none d-lg-inline">Search for location</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="main my-auto py-3">
+        <div class="container"></div>
+    </div>
+    <div class="modal fade" id="search-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="weather-form d-flex">
+                    <label for="location" class="search-label"><i class="bi bi-search"></i></label>
+                    <input type="search" name="location" id="location" class="form-control search-input border-0"
+                        placeholder="Search for location" />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
